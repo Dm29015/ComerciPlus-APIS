@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5167/api/clientes'; // Cambia esto a la URL de tu API
+const API_URL = 'http://localhost:5167/api/clientes';
 
 // Obtener clientes
 async function fetchclientes() {

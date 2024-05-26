@@ -36,7 +36,7 @@
             <h3>Inicia sesión en <strong>ComerciPlus</strong></h3>
             <p class="mb-4"></p>
 
-            <form action="./dashboard" id="formLogin">
+            <form id="formLogin" onsubmit="return botoniniciar(event)">
               <div class="form-group first">
                 <label for="username">Usuario</label>
                 <input for="correo " type="text" class="form-control" placeholder="" id="username" required
@@ -65,8 +65,8 @@
                 <span class="ml-auto"><a href="recover" class="forgot-pass">¿Olvidaste tu contraseña?</a></span>
               </div>
 
-              <button type="submit" class="btn btn-block btn-primary" onclick="botoniniciar()">INICIAR</button>
-
+              <button type="submit" class="btn btn-block btn-primary">INICIAR</button>
+              <div id="error" style="color: red; margin-top: 10px;"></div>
             </form>
           </div>
         </div>
@@ -74,26 +74,13 @@
     </div>
   </div>
 
-  <script>
-    // Función para manejar la validación y envío del primer formulario
-    function botoniniciar() {
-      var form = document.getElementById("formLogin");
-      if (form.checkValidity()) {
-        form.submit();
-
-
-      } else {
-        event.preventDefault();
-        event.stopPropagation();
-        form.classList.add('was-validated');
-      }
-    }
-  </script>
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
+
+  <script src="APIS/loginAPI.js"></script>
 </body>
 
 </html>
