@@ -1,7 +1,7 @@
-const API_URL = 'http://localhost:5167/api/creditos'; // Cambia esto a la URL de tu API
+const API_URL = 'http://localhost:5167/api/creditos';
 
 // Obtener créditos
-async function fetchCreditos() {
+async function fetchCredits() {
     try {
         const response = await fetch(API_URL);
         const creditos = await response.json();
@@ -11,7 +11,6 @@ async function fetchCreditos() {
     }
 }
 
-// Poblar la tabla con los datos obtenidos de la API
 async function viewCredits(creditos) {
     const tableBody = document.querySelector('#dataTable tbody');
     tableBody.innerHTML = '';
@@ -51,5 +50,6 @@ async function fetchClientName(clientId) {
     }
 }
 
-// Llamar a la función para obtener y mostrar los créditos al cargar la página
-document.addEventListener('DOMContentLoaded', fetchCreditos);
+
+// Inicializar la obtención de clientes
+document.addEventListener('DOMContentLoaded', fetchCredits);

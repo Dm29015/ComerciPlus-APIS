@@ -30,169 +30,149 @@
 	<section class="full-width pageContent">
 
 		{{!-- CRUD --}}
-		<div class="mt-4" id="wrapper">
-			<div id="content-wrapper" class="d-flex flex-column">
-				<div id="content">
-					<div class="container-fluid">
-						<div class="card shadow mb-4">
-							<div class="card-header py-3 d-flex justify-content-between">
-
-								<h1>Proveedores</h1>
-								<h6 class="m-0 font-weight-bold text-primary"></h6>
-
-								<button type="button" class="btn btn-success" data-bs-toggle="modal"
-									data-bs-target="#createModal">
-									<i class="bi bi-truck"></i> Agregar</button>
-							</div>
-
-							<div class="card-body text-center">
-								<div class="table-responsive">
-									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-										<thead>
-											<tr>
-												<th>NIT</th>
-												<th>NOMBRE</th>
-												<th>DIRECCIÓN</th>
-												<th>TELÉFONO</th>
-												<th>ENCARGADO</th>
-												<th>HORARIO</th>
-												<th>ACCIONES</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /.container-fluid -->
-				</div>
-				<!-- End of Main Content -->
-			</div>
-			<!-- End of Content Wrapper -->
-		</div>
-
-	</section>
+		 <div class="mt-4" id="wrapper">
+            <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content">
+                    <div class="container-fluid">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex justify-content-between">
+                                <h1>Proveedores</h1>
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createModal">
+                                    <i class="bi bi-truck"></i> Agregar
+                                </button>
+                            </div>
+                            <div class="card-body text-center">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>NIT</th>
+                                                <th>NOMBRE</th>
+                                                <th>DIRECCIÓN</th>
+                                                <th>TELÉFONO</th>
+                                                <th>ENCARGADO</th>
+                                                <th>HORARIO</th>
+                                                <th>ACCIONES</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- End of Main Content -->
+            </div>
+            <!-- End of Content Wrapper -->
+        </div>
+    </section>
 
 	{{!-- ------------------------------------------- MODAL CREATE ------------------------------------------ --}}
-	<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo proveedor</h1>
-				</div>
 
-				<div class="modal-body">
-
-					<form class="needs-validation row g-3 form" novalidate>
-						<div class="col-md-6">
-							<label for="inputNit" class="form-label">NIT<span class="text-danger">*</span></label>
-							<input type="text" class="form-control" id="nit1" pattern="[0-9]+" required>
-							<div class="invalid-feedback">Por favor ingresa un NIT válido.</div>
-						</div>
-						<div class="col-md-6">
-							<label for="inputPhone" class="form-label">Teléfono<span
-									class="text-danger">*</span></label>
-							<input type="text" class="form-control" id="phone1" pattern="[0-9]+"
-								title="Ingrese solo números" required>
-							<div class="invalid-feedback">Por favor ingresa un número válido.</div>
-						</div>
-						<div class="col-md-6">
-							<label for="inputName" class="form-label">Nombre de la Empresa <span
-									class="text-danger">*</span></label>
-							<input type="text" class="form-control" id="name1" pattern="[A-Za-z\s.,]+" required>
-							<div class="invalid-feedback">Por favor ingresa un nombre de empresa válido.</div>
-						</div>
-						<div class="col-md-6">
-							<label for="inputSeller" class="form-label">Nombre del vendedor</label>
-							<input type="text" class="form-control" id="Seller1" pattern="[A-Za-z\s]+">
-							<div class="invalid-feedback">Por favor ingresa un nombre válido.</div>
-						</div>
-						<div class="col-md-12">
-							<label for="inputAddress" class="form-label">Dirección de la empresa <span
-									class="text-danger">*</span></label>
-							<input type="text" class="form-control" id="address1" required>
-							<div class="invalid-feedback">Por favor ingresa una dirección válida.</div>
-						</div>
-						{{!-- ------------------------------------------ --}}
-						<!-- Dentro del cuerpo de tu formulario -->
-						<div class="col-12">
-							<div class="form-group">
-
-								<div id="horarioContainer">
-									<div class="row">
-										<button type="button" class="btn btn-primary col-4 m-3"
-											id="agregarHorario">Agregar
-											Horario</button>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						{{!-- -------------------------------------------- --}}
+    <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalCreateProvider">Nuevo proveedor</h1>
+                </div>
+                <div class="modal-body">
+                    <form id="createForm" class="needs-validation row g-3 form" novalidate>
+                        <div class="col-md-6">
+                            <label for="inputNit" class="form-label">NIT<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nit1" pattern="[0-9]+" required>
+                            <div class="invalid-feedback">Por favor ingresa un NIT válido.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPhone" class="form-label">Teléfono<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="phone1" pattern="[0-9]+" title="Ingrese solo números" required>
+                            <div class="invalid-feedback">Por favor ingresa un número válido.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputName" class="form-label">Nombre de la Empresa <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="name1" pattern="[A-Za-z\s.,]+" required>
+                            <div class="invalid-feedback">Por favor ingresa un nombre de empresa válido.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputSeller" class="form-label">Nombre del vendedor</label>
+                            <input type="text" class="form-control" id="Seller1" pattern="[A-Za-z\s]+">
+                            <div class="invalid-feedback">Por favor ingresa un nombre válido.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputAddress" class="form-label">Dirección de la empresa <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="address1" required>
+                            <div class="invalid-feedback">Por favor ingresa una dirección válida.</div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <div id="horarioContainer">
+                                    <div class="row">
+                                        <button type="button" class="btn btn-primary col-4 m-3" id="agregarHorario">Agregar Horario</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-							<button class="btn btn-primary submit-button" type="submit">Guardar</button>
-						</div>
-					</form>
-
-				</div>
-			</div>
-
-		</div>
-	</div>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary submit-button" type="submit" onclick="createProvider()">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	{{!-- ------------------------------------------- MODAL EDIT -------------------------------------------- --}}
-	<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
 
+	<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">Editar proveedor</h1>
+					<h1 class="modal-title fs-5" id="modalEditProvider">Editar proveedor</h1>
 				</div>
-				<div class="modal-body">
 
-					<form class="needs-validation row g-3 form" novalidate>
+				<div class="modal-body">
+					<form id="editForm" class="needs-validation row g-3 form" novalidate>
 						<div class="col-md-6">
 							<label for="inputNit" class="form-label">NIT<span class="text-danger">*</span></label>
-							<input type="text" class="form-control" id="nit1" pattern="[0-9]+" required>
+							<input type="text" class="form-control" id="editNit" pattern="[0-9]+" required>
 							<div class="invalid-feedback">Por favor ingresa un NIT válido.</div>
 						</div>
 						<div class="col-md-6">
 							<label for="inputPhone" class="form-label">Teléfono<span
 									class="text-danger">*</span></label>
-							<input type="text" class="form-control" id="phone1" pattern="[0-9]+"
+							<input type="text" class="form-control" id="editPhone" pattern="[0-9]+"
 								title="Ingrese solo números" required>
 							<div class="invalid-feedback">Por favor ingresa un número válido.</div>
 						</div>
 						<div class="col-md-6">
 							<label for="inputName" class="form-label">Nombre de la Empresa <span
 									class="text-danger">*</span></label>
-							<input type="text" class="form-control" id="name1" pattern="[A-Za-z\s.,]+" required>
+							<input type="text" class="form-control" id="editName" pattern="[A-Za-z\s.,]+" required>
 							<div class="invalid-feedback">Por favor ingresa un nombre de empresa válido.</div>
 						</div>
 						<div class="col-md-6">
 							<label for="inputSeller" class="form-label">Nombre del vendedor</label>
-							<input type="text" class="form-control" id="Seller1" pattern="[A-Za-z\s]+">
+							<input type="text" class="form-control" id="editSeller" pattern="[A-Za-z\s]+">
 							<div class="invalid-feedback">Por favor ingresa un nombre válido.</div>
 						</div>
 						<div class="col-md-12">
 							<label for="inputAddress" class="form-label">Dirección de la empresa <span
 									class="text-danger">*</span></label>
-							<input type="text" class="form-control" id="address1" required>
+							<input type="text" class="form-control" id="editAddress" required>
 							<div class="invalid-feedback">Por favor ingresa una dirección válida.</div>
 						</div>
-						{{!-- ------------------------------------------ --}}
 						<div class="col-12">
 							<div class="form-group">
 								<div class="col-md-12 text-center">
@@ -202,7 +182,7 @@
 									<div class="row">
 										<div class="col-md-4">
 											<label class="form-label">Día</label>
-											<select class="form-control" name="dia${horarioCount}">
+											<select class="form-control" name="editDia">
 												<option value="Lunes">Lunes</option>
 												<option value="Martes">Martes</option>
 												<option value="Miércoles">Miércoles</option>
@@ -214,11 +194,11 @@
 										</div>
 										<div class="col-md-3">
 											<label class="form-label">Desde</label>
-											<input type="time" class="form-control" name="desde${horarioCount}">
+											<input type="time" class="form-control" name="editDesde">
 										</div>
 										<div class="col-md-3">
 											<label class="form-label">Hasta</label>
-											<input type="time" class="form-control" name="hasta${horarioCount}">
+											<input type="time" class="form-control" name="editHasta">
 										</div>
 										<div class="col-md-2 align-self-end">
 											<button type="button" class="btn btn-danger mt-2 m-1"
@@ -230,20 +210,15 @@
 									Horario</button>
 							</div>
 						</div>
-
-						{{!-- -------------------------------------------- --}}
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-							<button class="btn btn-primary submit-button" type="submit">Guardar</button>
+							<button class="btn btn-primary submit-button" type="submit" onclick="updateProvider()">Guardar</button>
 						</div>
 					</form>
-
 				</div>
-
 			</div>
 		</div>
 	</div>
-
 
 	<!-- endPageContent -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
