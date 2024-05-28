@@ -131,7 +131,7 @@ async function updateClient() {
         apellidoCliente,
         direccionCliente,
         telefonoCliente,
-        estadoCliente
+        estadoCliente : true
     };
 
     try {
