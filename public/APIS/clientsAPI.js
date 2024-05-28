@@ -53,8 +53,7 @@ function viewClients(clientes) {
 }
 
 // Crear cliente
-async function createClient(event) {
-    event.preventDefault(); // Prevenir el envío del formulario predeterminado
+async function createClient() {
 
     const cedulaCliente = document.getElementById('inputIdentification').value;
     const telefonoCliente = document.getElementById('inputPhone').value;
@@ -82,10 +81,7 @@ async function createClient(event) {
 
         if (!response.ok) {
             console.error('Error al crear el cliente:', response.statusText);
-        } else {
-            // Si la creación es exitosa, recargar los clientes
-            fetchClients();
-            document.getElementById('createFormClient').reset(); // Reiniciar el formulario
+            console.log(cliente);
         }
     } catch (error) {
         console.error('Error al crear el cliente:', error);
@@ -102,7 +98,7 @@ async function editClient(id) {
 
         const cliente = await response.json();
 
-        idCliente = cliente.id; // Asignar el ID del cliente a la variable global
+        idCliente = cliente.id;
 
         document.getElementById('inputIdentificationEdit').value = cliente.cedulaCliente;
         document.getElementById('inputPhoneEdit').value = cliente.telefonoCliente;
