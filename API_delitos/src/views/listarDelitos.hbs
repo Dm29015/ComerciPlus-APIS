@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <title></title>
+
+  <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-pro" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+
+  <link id="pagestyle" href="./assets/css/argon-dashboard.min9c7f.css?v=2.0.5" rel="stylesheet" />
+
+  <style>
+    .async-hide {
+      opacity: 0 !important
+    }
+    .color {
+      background-color: rgb(255, 153, 0);
+    }
+  </style>
+
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+
+  <div class="min-height-300 color position-absolute w-100"></div>
+
+
+  <main class="main-content position-relative border-radius-lg ">
+
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="table-responsive">
+              <table class="table table-flush" id="datatable-search">
+                <thead class="thead-light">
+                  <tr>
+                    <th>DEPARTAMENTO</th>
+                    <th>MUNICIPIO</th>
+                    <th>ARMAS</th>
+                    <th>FECHA</th>
+                    <th>TIPO DE HURTO</th>
+                    <th>CANTIDAD</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each datos}}
+                  <tr>
+                    <td class="font-weight-bold">
+                      <span class="my-2 text-xs">{{departamento}}</span>
+                    </td>
+                    <td class="font-weight-bold">
+                      <span class="my-2 text-xs">{{municipio}}</span>
+                    </td>
+                    <td class="font-weight-bold">
+                      <span class="my-2 text-xs">{{armas_medios}}</span>
+                    </td>
+                    <td class="font-weight-bold">
+                      <span class="my-2 text-xs">{{fecha_hecho}}</span>
+                    </td>
+                    <td class="font-weight-bold">
+                      <span class="my-2 text-xs">{{tipo_de_hurto}}</span>
+                    </td>
+                    <td class="font-weight-bold">
+                      <span class="my-2 text-xs">{{cantidad}}</span>
+                    </td>
+                  </tr>
+                  {{/each}}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+
+  <script src="./assets/js/plugins/dragula/dragula.min.js"></script>
+  <script src="./assets/js/plugins/jkanban/jkanban.js"></script>
+  <script src="./assets/js/plugins/datatables.js"></script>
+
+  <script>
+    const dataTableSearch = new simpleDatatables.DataTable("#datatable-search", {
+      searchable: true,
+      fixedHeight: false,
+      perPageSelect: false
+    });
+  </script>
+
+</body>
+
+</html>

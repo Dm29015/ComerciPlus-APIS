@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Elementos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de Elementos</h1>
+        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Buscar...">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody id="elementTableBody">
+                <!-- Aquí se insertarán los datos de los elementos -->
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination" id="pagination">
+                <!-- Aquí se insertarán los botones de paginación -->
+            </ul>
+        </nav>
+    </div>
+    <script id="element-template" type="text/x-handlebars-template">
+        {{#each datos}}
+        <tr>
+            <td>{{ubicacion}}</td>
+            <td>{{estado}}</td>
+        </tr>
+        {{/each}}
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var template = Handlebars.compile($("#element-template").html());
+            var currentPage = 1;
+            var elementsPerPage = 5;
+            var elements = []; // Aquí almacenaremos los elementos de la API
+
+            // Función para mostrar los elementos en la tabla
+            function renderElements(filteredElements = null) {
+                var data = filteredElements ? filteredElements : elements;
+                var start = (currentPage - 1) * elementsPerPage;
+                var end = start + elementsPerPage;
+                var paginatedElements = data.slice(start, end);
+                $("#elementTableBody").html(template({ elements: paginatedElements }));
+            }
+
+            // Función para mostrar los botones de paginación
+            function renderPagination() {
+                var totalPages = Math.ceil(elements.length / elementsPerPage);
+                var paginationHtml = "";
+                for (var i = 1; i <= totalPages; i++) {
+                    paginationHtml += "<li class='page-item'><a class='page-link' href='#'>" + i + "</a></li>";
+                }
+                $("#pagination").html(paginationHtml);
+            }
+
+            // Cambiar a la página seleccionada
+            $("#pagination").on("click", ".page-link", function () {
+                currentPage = parseInt($(this).text());
+                renderElements();
+                $(this).parent().addClass("active").siblings().removeClass("active");
+            });
+
+            // Búsqueda de elementos
+            $("#searchInput").on("keyup", function () {
+                var searchTerm = $(this).val().toLowerCase();
+                var filteredElements = elements.filter(function (element) {
+                    // Filtrar por todos los campos del elemento
+                    return Object.values(element).some(function (value) {
+                        if (typeof value === 'string') {
+                            return value.toLowerCase().includes(searchTerm);
+                        }
+                        return false;
+                    });
+                });
+                currentPage = 1; // Al buscar, volvemos a la primera página
+                renderElements(filteredElements);
+                renderPagination(); // Re-renderizamos la paginación
+            });
+
+
+
+         
+        });
+    </script>
+</body>
+
+</html>
