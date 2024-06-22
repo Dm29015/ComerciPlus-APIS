@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5167/api/creditos';
+const API_URL = 'http://deisy77-001-site1.gtempurl.com/api/creditos';
 
 // Obtener créditos
 async function fetchCredits() {

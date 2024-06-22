@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5167/api/clientes';
+const API_URL = 'http://deisy77-001-site1.gtempurl.com/api/clientes';
 let idCliente;
 
 // Obtener clientes

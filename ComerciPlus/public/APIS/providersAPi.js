@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5167/api/proveedores'; // Cambia esto a la URL de tu API
+const API_URL = 'http://deisy77-001-site1.gtempurl.com/api/proveedores'; // Cambia esto a la URL de tu API
 
 // Obtener proveedores
 async function fetchProviders() {
